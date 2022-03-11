@@ -19,8 +19,8 @@ public class searchPageObjects {
 
 
 	private By search_product  = By.xpath("//input[@id='search_query_top']");
-	private By clickOnProduct = By.xpath("//button[@type='submit' and @name='submit_search']");
-	private By resultProdText  = By.xpath("//span[@class='lighter']");
+	private By resultProdText = By.xpath("//strong[normalize-space()='T-shirt']");
+
 
 	public searchPageObjects(WebDriver driver)
 	{
@@ -30,20 +30,18 @@ public class searchPageObjects {
 	public void searchProduct(String text)
 	{
 		driver.findElement(search_product).sendKeys(text);
-		driver.findElement(clickOnProduct).click();
 		Logger.info("Search product : "+text);
 	}
+
 
 	public void validateSearchProductSuccessful()
 	{
 		WebElement text = driver.findElement(resultProdText);
 		String resultText = text.getText();
 		System.out.println(resultText);
-		Assert.assertEquals("\"T-SHIRT\"",resultText); 
+		Assert.assertEquals("T-shirt",resultText); 
 		Logger.info("Product search result contains : "+resultText);
 	}
-
-
 
 
 }
