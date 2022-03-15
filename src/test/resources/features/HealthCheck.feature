@@ -6,24 +6,31 @@ Feature: E-commerce Project Web Site Health Check
 
   @t1
   Scenario: Application URL redirection
-    When User redirected to another url
-    Then Result Page is Displayed
+    Then Launched url redirected to "http://automationpractice.com/index.php"
 
   @t2
   Scenario: Application logo visibility
-    Then logo is displayed
+    Then The Application logo is displayed
+    And The application logo width is 350 & height is 99
 
   @t3
-  Scenario: Application product main category list validation
-    Then product category list is displayed
+  Scenario Outline: Application product main category list validation
+    Then Main product categories count should be 3
+    And Displayed text should be "<product_name>"
+
+    Examples: 
+      | product_name |
+      | WOMEN        |
+      | DRESSES      |
+      | T-SHIRTS     |
 
   @t4
   Scenario: Application Search functionality
     When User Search for product "T-shirt"
-    Then Search Result page is displayed
+    Then The search result contains "T-shirt" as text
 
   @t5
   Scenario: Application social media handles validation
-    When User click on the twitter link at footer section of a page
-    Then User navigated to twitter page
-    And Details of user account displayed
+    When User clicks on the twitter link form footer section form landing page of the application
+    Then The url opened on a new tab contains "seleniumfrmwrk"
+    And The twitter account name is "Selenium Framework"

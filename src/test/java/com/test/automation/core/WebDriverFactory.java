@@ -46,13 +46,7 @@ public class WebDriverFactory {
 		Logger.info("Browser navigated to the url : "+url);
 	}
 
-	public static void redirectedToTheUrl(String url)
-	{
-		driver.navigate().to(url);
-		Logger.info("Browser navigated to the url : "+url);
-	}
-	
-	public static void quitDriver()
+		public static void quitDriver()
 	{
 		driver.quit();
 		Logger.info("Browser Closed");

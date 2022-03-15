@@ -1,7 +1,6 @@
 package com.test.automation.runner;
 
 import org.junit.runner.RunWith;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -10,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 		features = "classpath:features",
 		glue = "com.test.automation.stepdefs",
-		tags="",
+		tags= "@ui",
 		plugin= {
 				"pretty",
 				"html:target/html/htmlreport.html",
@@ -19,9 +18,9 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome=true,
 		publish=true,
 		dryRun=false
-
 		)
 
-public class TestRunner {
+public class TestRunner 
+{
 
 }
