@@ -54,10 +54,13 @@ public class CmnPageObjects
 
 	public void validationOfProductListCount(int count)
 	{
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		List<WebElement> productCategoryList = driver.findElements(prodlist);
+		wait.until(ExpectedConditions.visibilityOfAllElements(productCategoryList));
 		int prodCount = productCategoryList.size();
 		System.out.println(prodCount);
 
+	
 		Assert.assertEquals(count, prodCount);
 		Logger.info("count of product in list matched : "+prodCount);
 	}

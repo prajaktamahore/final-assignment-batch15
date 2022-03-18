@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 		features = "classpath:features",
 		glue = "com.test.automation.stepdefs",
-		tags= "@ui",
+		tags= "",
 		plugin= {
 				"pretty",
 				"html:target/html/htmlreport.html",
@@ -22,5 +22,5 @@ import io.cucumber.junit.CucumberOptions;
 
 public class TestRunner 
 {
-
+	
 }
